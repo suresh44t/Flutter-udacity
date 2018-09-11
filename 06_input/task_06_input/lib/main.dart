@@ -25,7 +25,13 @@ class UnitConverterApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Unit Converter',
-      // TODO: Fill out the theme parameter
+      theme: ThemeData(
+        textTheme: Theme.of(context).textTheme.apply(
+          bodyColor: Colors.black,
+          displayColor: Colors.grey[600],
+        ),
+        primaryColor: Colors.grey[500],
+      ),
       home: CategoryRoute(),
     );
   }

@@ -3,14 +3,12 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:task_07_backdrop/backdrop.dart';
-import 'package:task_07_backdrop/unit_converter.dart';
 
+import 'backdrop.dart';
+import 'unit_converter.dart';
 import 'category.dart';
 import 'category_tile.dart';
 import 'unit.dart';
-
-final _backgroundColor = Colors.green[100];
 
 /// Category Route (screen).
 ///
@@ -128,7 +126,6 @@ class _CategoryRouteState extends State<CategoryRoute> {
   @override
   Widget build(BuildContext context) {
     final listView = Container(
-      color: _backgroundColor,
       padding: EdgeInsets.symmetric(horizontal: 8.0),
       child: _buildCategoryWidgets(),
     );
@@ -137,8 +134,8 @@ class _CategoryRouteState extends State<CategoryRoute> {
       currentCategory: _currentCategory == null
           ? _defaultCategory : _currentCategory,
       frontPanel: _currentCategory == null
-          ? UnitConverter(category: _defaultCategory,)
-          : UnitConverter(category: _currentCategory,),
+          ? UnitConverter(category: _defaultCategory)
+          : UnitConverter(category: _currentCategory),
       backPanel: listView,
       frontTitle: Text('Unit Converter'),
       backTitle: Text('Select a Category'),

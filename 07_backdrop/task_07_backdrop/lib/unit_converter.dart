@@ -30,7 +30,7 @@ class _UnitConverterState extends State<UnitConverter> {
   Unit _toValue;
   double _inputValue;
   String _convertedValue = '';
-  List<DropdownMenuItem> _unitMenuItems;
+  List<DropdownMenuItem<String>> _unitMenuItems;
   bool _showValidationError = false;
 
   @override
@@ -53,7 +53,7 @@ class _UnitConverterState extends State<UnitConverter> {
 
   /// Creates fresh list of [DropdownMenuItem] widgets, given a list of [Unit]s.
   void _createDropdownMenuItems() {
-    var newItems = <DropdownMenuItem>[];
+    var newItems = <DropdownMenuItem<String>>[];
     for (var unit in widget.category.units) {
       newItems.add(DropdownMenuItem(
         value: unit.name,
@@ -149,7 +149,7 @@ class _UnitConverterState extends State<UnitConverter> {
     }
   }
 
-  Widget _createDropdown(String currentValue, ValueChanged<dynamic> onChanged) {
+  Widget _createDropdown(String currentValue, ValueChanged<String> onChanged) {
     return Container(
       margin: EdgeInsets.only(top: 16.0),
       decoration: BoxDecoration(

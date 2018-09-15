@@ -131,7 +131,7 @@ class _UnitConverterState extends State<UnitConverter> {
     );
   }
 
-  void _updateFromConversion(dynamic unitName) {
+  void _updateFromConversion(String unitName) {
     setState(() {
       _fromValue = _getUnit(unitName);
     });
@@ -140,7 +140,7 @@ class _UnitConverterState extends State<UnitConverter> {
     }
   }
 
-  void _updateToConversion(dynamic unitName) {
+  void _updateToConversion(String unitName) {
     setState(() {
       _toValue = _getUnit(unitName);
     });
